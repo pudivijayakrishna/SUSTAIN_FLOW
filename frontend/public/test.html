@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Password Reset</title>
+</head>
+<body>
+    <h2>Test Password Reset</h2>
+    <button onclick="resetPassword()">Reset Password</button>
+
+    <script>
+        async function resetPassword() {
+            try {
+                const response = await fetch('http://localhost:8000/auth/reset-user-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: 'agency2',
+                        role: 'compostAgency'
+                    })
+                });
+                
+                const data = await response.json();
+                console.log('Response:', data);
+                alert(data.message || data.error);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to reset password');
+            }
+        }
+    </script>
+</body>
+</html>
