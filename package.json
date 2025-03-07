@@ -4,5 +4,9 @@
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
     "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "vercel-build": "npm run build"
   }
 }
