@@ -27,4 +27,4 @@
 # Environment Variables
 /backend/.env
 
-vercel.json
+vercel.json".env" 
